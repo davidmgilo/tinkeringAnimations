@@ -1,8 +1,7 @@
-var x = 95
-var y = 50
+var x
+var y
 
-function init() {
-    //Draw first frame
+function drawCircle(x, y) {
     var c = document.getElementById("animation");
     if(c){
         var ctx = c.getContext("2d");
@@ -10,6 +9,11 @@ function init() {
         ctx.arc(x,y,40,0,2*Math.PI);
         ctx.stroke();
     }
+}
+
+function init() {
+    //Draw first frame
+    drawCircle(95,50)
 }
 
 document.addEventListener('DOMContentLoaded',function (event) {
