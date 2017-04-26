@@ -1,5 +1,5 @@
-var x
-var y
+var x = 95
+var y = 50
 
 function drawCircle(x, y) {
     var c = document.getElementById("animation");
@@ -13,16 +13,18 @@ function drawCircle(x, y) {
 
 function init() {
     //Draw first frame
-    drawCircle(95,50)
+    drawCircle(x,y)
+}
+
+function update() {
+    x++
+    y++
+    drawCircle(x,y)
 }
 
 document.addEventListener('DOMContentLoaded',function (event) {
     init()
+
+    setInterval(update,35/1000)
 } )
 // Can be done with $(document).ready
-
-
-//
-// while(1){
-//
-// }
