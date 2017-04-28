@@ -24890,7 +24890,7 @@ function update() {
 document.addEventListener('DOMContentLoaded', function (event) {
     init();
 
-    setInterval(update, 35 / 1000);
+    setInterval(update, 1000 / 35);
 });
 // Can be done with $(document).ready
 
