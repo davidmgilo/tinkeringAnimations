@@ -23,8 +23,23 @@ function update() {
 }
 
 document.addEventListener('DOMContentLoaded',function (event) {
-    init()
 
-    setInterval(update,1000/35)
+    // usage:
+    // instead of setInterval(render, 16) ....
+
+    (function animloop(){
+        requestAnimFrame(animloop);
+        update();
+    })();
 } )
 // Can be done with $(document).ready
+
+// shim layer with setTimeout fallback
+window.requestAnimFrame = (function(){
+    return  window.requestAnimationFrame       ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame    ||
+        function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+        };
+})();
